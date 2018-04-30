@@ -1,25 +1,30 @@
-package authserver;
+package com.tmy.config;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
+import com.tmy.entry.User;
+import com.tmy.repository.UserRepository;
 
 @Service
-public class data {
-    @Autowired
-    userRepository userRepository;
-
+public class DataInit {
+    
+    @Autowired UserRepository userRepository;
+    
     @PostConstruct
     public void dataInit(){
-        user admin = new user();
+        User admin = new User();
         admin.setPassword("admin");
         admin.setUsername("admin");
+        admin.setRole(User.ROLE.admin);
         userRepository.save(admin);
-
-        user user = new user();
+        
+        User user = new User();
         user.setPassword("user");
         user.setUsername("user");
+        user.setRole(User.ROLE.user);
         userRepository.save(user);
     }
 

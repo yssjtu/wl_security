@@ -1,4 +1,4 @@
-package authserver;
+package com.tmy.wordladder;
 import java.io.*;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;

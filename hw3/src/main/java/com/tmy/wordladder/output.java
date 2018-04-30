@@ -1,4 +1,4 @@
-package authserver;
+package com.tmy.wordladder;
 
 import java.util.*;
 
